@@ -70,6 +70,16 @@ local neoTreeConfig = function()
         window = {
             position = "left",
             width = 30,
+        },
+        event_handlers = {
+            {
+                event = "neo_tree_buffer_enter",
+                handler = function()
+                    -- Remove sidescroll and indenting lines when inside NeoTree window
+                    vim.opt_local.sidescrolloff = 0
+                    vim.cmd(":IndentLinesDisable")
+                end,
+            }
         }
     })
 end
