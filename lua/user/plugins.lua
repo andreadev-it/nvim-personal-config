@@ -25,6 +25,11 @@ local autoPairsConfig = function()
     require("nvim-autopairs").setup()
 end
 
+-- GITSIGNS config
+local gitsignsConfig = function()
+    require("gitsigns").setup()
+end
+
 
 -- COPILOT config
  local copilotConfig = function()
@@ -111,6 +116,12 @@ return packer.startup(function(use)
 	-- LSP
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
+
+    -- GIT
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = gitsignsConfig
+    }
 
     -- Functionalities
     use {
