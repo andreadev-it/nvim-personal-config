@@ -22,7 +22,7 @@ vim.api.nvim_set_keymap( 'v', '<', '<gv', {noremap = true} )
 vim.api.nvim_set_keymap( 'v', '>', '>gv', {noremap = true} )
 
 -- Clear matches with Ctrl+l
-vim.api.nvim_set_keymap( 'n', '<C-l>', ':noh<cr>', {noremap = true} )
+vim.api.nvim_set_keymap( 'n', '<C-n>', ':noh<cr>', {noremap = true} )
 
 -- Copy and cut to the clipboard
 -- vim.api.nvim_set_keymap( 'n', '<leader>Y', '"+y<cr>', {noremap = true} ) -- This way it doesn't work
