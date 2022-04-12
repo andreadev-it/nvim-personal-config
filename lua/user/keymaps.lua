@@ -11,9 +11,25 @@ vim.api.nvim_set_keymap( 'n', '<C-j>', '<C-w>j', {noremap = true} )
 vim.api.nvim_set_keymap( 'n', '<C-k>', '<C-w>k', {noremap = true} )
 vim.api.nvim_set_keymap( 'n', '<C-l>', '<C-w>l', {noremap = true} )
 
+-- Better window resizing (shift+<arrow>)
+vim.api.nvim_set_keymap("n", "<S-Up>", ":resize +2<CR>", {noremap = true} )
+vim.api.nvim_set_keymap("n", "<S-Down>", ":resize -2<CR>", {noremap = true} )
+vim.api.nvim_set_keymap("n", "<S-Left>", ":vertical resize -2<CR>", {noremap = true} )
+vim.api.nvim_set_keymap("n", "<S-Right>", ":vertical resize +2<CR>", {noremap = true} )
+
 -- Keep visual selection after indenting
 vim.api.nvim_set_keymap( 'v', '<', '<gv', {noremap = true} )
 vim.api.nvim_set_keymap( 'v', '>', '>gv', {noremap = true} )
+
+-- Clear matches with Ctrl+l
+vim.api.nvim_set_keymap( 'n', '<C-l>', ':noh<cr>', {noremap = true} )
+
+-- Copy and cut to the clipboard
+-- vim.api.nvim_set_keymap( 'n', '<leader>Y', '"+y<cr>', {noremap = true} ) -- This way it doesn't work
+vim.cmd([[
+    noremap YY "+y<CR>
+    noremap XX "+x<CR>
+]])
 
 -- NeoTree toggle
 vim.api.nvim_set_keymap( 'n', "\\", ":Neotree toggle<cr>", {noremap = true} )
