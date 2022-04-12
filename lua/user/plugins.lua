@@ -30,6 +30,12 @@ local gitsignsConfig = function()
     require("gitsigns").setup()
 end
 
+-- COMMENT.NVIM config
+local commentConfig = function()
+    require('Comment').setup()
+end
+
+
 
 -- COPILOT config
  local copilotConfig = function()
@@ -155,6 +161,10 @@ return packer.startup(function(use)
     use {
         "windwp/nvim-autopairs",
         config = autoPairsConfig,
+    }
+    use {
+        'numToStr/Comment.nvim',
+        config = commentConfig
     }
 
 end)
