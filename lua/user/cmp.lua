@@ -68,14 +68,19 @@ cmp.setup {
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
             else
-                local copilot_keys = vim.fn["copilot#Accept"]()
+                fallback()
+            end
+        end, {
+            "i",
+            "s",
+        }),
+        ["<C-c>"] = cmp.mapping(function (fallback)
+            local copilot_keys = vim.fn["copilot#Accept"]()
 
-                if copilot_keys ~= "" then
-                    vim.api.nvim_feedkeys(copilot_keys, "i", true)
-                else
-                    fallback()
-
-                end
+            if copilot_keys ~= "" then
+                vim.api.nvim_feedkeys(copilot_keys, "i", true)
+            else
+                fallback()
             end
         end, {
             "i",
