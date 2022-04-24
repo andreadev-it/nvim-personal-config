@@ -2,9 +2,9 @@
 -- Auto commands
 -- -------------
 
-vim.cmd([[
-    if executable('timg')
-        au BufEnter *.jpg,*.png terminal timg %
-    endif
-]])
-
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*.jpg,*.png",
+    callback = function()
+        vim.cmd("terminal timg %")
+    end,
+})
