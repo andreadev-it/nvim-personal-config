@@ -17,7 +17,11 @@ end
 
 -- LUALINE config
 local lualineConfig = function()
-    require('lualine').setup()
+    require('lualine').setup({
+        options = {
+            globalstatus = true
+        }
+    })
 end
 
 -- AUTOPAIRS config
