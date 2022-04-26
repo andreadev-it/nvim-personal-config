@@ -81,6 +81,11 @@ local neoTreeConfig = function()
             position = "left",
             width = 30,
         },
+        filesystem = {
+            filtered_items = {
+                hide_dotfiles = false
+            },
+        },
         event_handlers = {
             {
                 event = "neo_tree_buffer_enter",
