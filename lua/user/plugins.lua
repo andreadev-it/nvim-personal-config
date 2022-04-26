@@ -103,14 +103,6 @@ local toggletermConfig = function()
     })
 end
 
--- SHADE config
-local shadeConfig = function()
-    require("shade").setup({
-        exclude_filetypes = {"neo-tree"}
-    })
-end
-
-
 
 return packer.startup(function(use)
 	-- Packer itself
@@ -132,10 +124,6 @@ return packer.startup(function(use)
     use {
         'p00f/nvim-ts-rainbow',
         requires = { 'nvim-treesitter/nvim-treesitter' }
-    }
-    use {
-        '/home/andrea/Projects/Shade.nvim',
-        config = shadeConfig
     }
 
 	-- Completion
