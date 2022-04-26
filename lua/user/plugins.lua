@@ -139,7 +139,7 @@ return packer.startup(function(use)
         requires = { 'nvim-treesitter/nvim-treesitter' }
     }
     use {
-        '/home/andrea/Projects/Shade.nvim',
+        'andreadev-it/Shade.nvim',
         config = shadeConfig
     }
 
