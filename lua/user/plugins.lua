@@ -102,7 +102,7 @@ end
 -- TOGGLETERM config
 local toggletermConfig = function()
     require("toggleterm").setup({
-        open_mapping = [[<leader>t]],
+        open_mapping = "<c-\\>",
         insert_mappings = false,
         direction =  "float"
     })
