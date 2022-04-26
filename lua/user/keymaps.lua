@@ -37,3 +37,14 @@ vim.api.nvim_set_keymap( 'n', "<C-b>", ":Neotree toggle source=buffers<cr>", {no
 
 -- Telescope
 vim.api.nvim_set_keymap( 'n', "<C-p>", ":Telescope find_files<cr>", {noremap = true} )
+
+-- Terminal utilities
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
+
+vim.api.nvim_set_keymap( 'n', "<leader>lg", "", {
+    callback = function ()
+        lazygit:toggle()
+    end,
+    noremap = true
+})

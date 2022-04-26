@@ -99,7 +99,21 @@ local neoTreeConfig = function()
     })
 end
 
+-- TOGGLETERM config
+local toggletermConfig = function()
+    require("toggleterm").setup({
+        open_mapping = [[<leader>t]],
+        insert_mappings = false,
+        direction =  "float"
+    })
+end
 
+-- SHADE config
+local shadeConfig = function()
+    require("shade").setup({
+        exclude_filetypes = {"neo-tree"}
+    })
+end
 
 
 
@@ -110,6 +124,7 @@ return packer.startup(function(use)
     -- Appearance
     use 'kyazdani42/nvim-web-devicons'
     use 'EdenEast/nightfox.nvim'
+    use 'ellisonleao/gruvbox.nvim'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -122,6 +137,10 @@ return packer.startup(function(use)
     use {
         'p00f/nvim-ts-rainbow',
         requires = { 'nvim-treesitter/nvim-treesitter' }
+    }
+    use {
+        '/home/andrea/Projects/Shade.nvim',
+        config = shadeConfig
     }
 
 	-- Completion
@@ -174,6 +193,10 @@ return packer.startup(function(use)
     use {
         'numToStr/Comment.nvim',
         config = commentConfig
+    }
+    use {
+        "akinsho/toggleterm.nvim",
+        config = toggletermConfig
     }
 
 end)
