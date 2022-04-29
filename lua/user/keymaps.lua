@@ -40,7 +40,16 @@ vim.api.nvim_set_keymap( 'n', "<C-p>", ":Telescope find_files<cr>", {noremap = t
 
 -- Terminal utilities
 local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
+local lazygit = Terminal:new({
+    cmd = "lazygit",
+    hidden = true,
+    direction = "float",
+    float_opts = {
+        border = "curved",
+        width = math.floor(vim.o.columns * 0.9),
+        height = math.floor(vim.o.lines * 0.8)
+    }
+})
 local genericTerm = Terminal:new({ hidden = true })
 
 vim.api.nvim_set_keymap( 'n', "<leader>lg", "", {
