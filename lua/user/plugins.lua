@@ -109,6 +109,11 @@ local toggletermConfig = function()
 end
 
 
+local projectConfig = function()
+    require("project_nvim").setup({})
+    require('telescope').load_extension('projects')
+end
+
 return packer.startup(function(use)
 	-- Packer itself
 	use 'wbthomason/packer.nvim'
@@ -129,6 +134,13 @@ return packer.startup(function(use)
     use {
         'p00f/nvim-ts-rainbow',
         requires = { 'nvim-treesitter/nvim-treesitter' }
+    }
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' },
+        config = function ()
+            require("user.greeter")
+        end
     }
 
 	-- Completion
@@ -185,6 +197,10 @@ return packer.startup(function(use)
     use {
         "akinsho/toggleterm.nvim",
         config = toggletermConfig
+    }
+    use {
+        "ahmedkhalf/project.nvim",
+        config = projectConfig
     }
 
 end)
