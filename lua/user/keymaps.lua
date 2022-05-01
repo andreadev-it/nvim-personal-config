@@ -48,7 +48,10 @@ local lazygit = Terminal:new({
         border = "curved",
         width = math.floor(vim.o.columns * 0.9),
         height = math.floor(vim.o.lines * 0.8)
-    }
+    },
+    on_close = function ()
+        require("neo-tree.events").fire_event("git_event")
+    end
 })
 local genericTerm = Terminal:new({ hidden = true })
 
