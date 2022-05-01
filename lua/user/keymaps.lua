@@ -53,7 +53,6 @@ local lazygit = Terminal:new({
         require("neo-tree.events").fire_event("git_event")
     end
 })
-local genericTerm = Terminal:new({ hidden = true })
 
 vim.api.nvim_set_keymap( 'n', "<leader>lg", "", {
     callback = function ()
@@ -62,9 +61,14 @@ vim.api.nvim_set_keymap( 'n', "<leader>lg", "", {
     noremap = true
 })
 
-vim.api.nvim_set_keymap( 'n', "<leader>t", "", {
-    callback = function ()
-        genericTerm:toggle()
+-- Greeter
+vim.api.nvim_set_keymap( 'n', "<leader>g", "", {
+    callback = function()
+        vim.cmd("Neotree close")
+        vim.cmd("Alpha")
     end,
     noremap = true
 })
+
+-- Timetrap
+vim.api.nvim_set_keymap( 'n', "<leader>t", ":Timetrap ", { noremap = true })
