@@ -6,8 +6,8 @@ configs.setup {
     ignore_install = { "" },
     highlight = {
         enable = true,
-        disable = { "" },
-        additional_vim_regex_highlighting = true,
+        disable = { "org" },
+        additional_vim_regex_highlighting = { "org" },
     },
     indent = { enable = true, disable = { "yaml" } },
     rainbow = {

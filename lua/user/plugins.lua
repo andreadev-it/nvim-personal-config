@@ -202,5 +202,10 @@ return packer.startup(function(use)
         "ahmedkhalf/project.nvim",
         config = projectConfig
     }
+    use {'nvim-orgmode/orgmode', config = function()
+            require('orgmode').setup{}
+    end
+    }
+
 
 end)
