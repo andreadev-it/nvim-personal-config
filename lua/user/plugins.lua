@@ -114,6 +114,26 @@ local projectConfig = function()
     require('telescope').load_extension('projects')
 end
 
+
+-- WINDOWTAGS (DEBUG) config
+-- local windowTagsConfig = function ()
+--     require("window_tags").setup({
+--         exclude_filetypes = { "neo-tree" },
+--         border = "single"
+--     })
+-- end
+
+-- TIMETRAP (DEBUG) config
+local timetrapConfig = function ()
+    require("timetrap_nvim").setup({
+        display = {
+            win_type = "float",
+            border = "rounded",
+        },
+        prompts = "float"
+    })
+end
+
 return packer.startup(function(use)
 	-- Packer itself
 	use 'wbthomason/packer.nvim'
@@ -206,6 +226,13 @@ return packer.startup(function(use)
             require('orgmode').setup{}
     end
     }
-
+    use {
+        "andreadev-it/timetrap.nvim",
+        branch = "dev",
+        requires = {
+            "MunifTanjim/nui.nvim"
+        },
+        config = timetrapConfig
+    }
 
 end)
