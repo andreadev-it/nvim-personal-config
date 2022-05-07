@@ -42,21 +42,21 @@ end
 
 
 -- COPILOT config
- local copilotConfig = function()
-    vim.g.copilot_no_tab_map = true
-    vim.g.copilot_assume_mapped = true
-    vim.g.copilot_tab_fallback = ""
+local copilotConfig = function()
+   vim.g.copilot_no_tab_map = true
+   vim.g.copilot_assume_mapped = true
+   vim.g.copilot_tab_fallback = ""
 
-    vim.cmd[[
-    let g:copilot_filetypes = {
-        \ '*': v:false,
-        \ 'python': v:true,
-        \ 'javascript': v:true,
-        \ 'typescript': v:true,
-        \ 'php': v:true
-        \ }
-    ]]
- end
+   vim.cmd[[
+   let g:copilot_filetypes = {
+       \ '*': v:false,
+       \ 'python': v:true,
+       \ 'javascript': v:true,
+       \ 'typescript': v:true,
+       \ 'php': v:true
+       \ }
+   ]]
+end
 
 
 -- NEOTREE Config
@@ -135,8 +135,8 @@ local timetrapConfig = function ()
 end
 
 return packer.startup(function(use)
-	-- Packer itself
-	use 'wbthomason/packer.nvim'
+    -- Packer itself
+    use 'wbthomason/packer.nvim'
 
     -- Appearance
     use 'kyazdani42/nvim-web-devicons'
@@ -162,14 +162,12 @@ return packer.startup(function(use)
             require("user.greeter")
         end
     }
-
-	-- Completion
+    -- Completion
     use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-path'
     use 'saadparwaiz1/cmp_luasnip'
     use 'hrsh7th/cmp-cmdline'
-
     use 'L3MON4D3/LuaSnip'
     use 'hrsh7th/cmp-nvim-lsp'
     use {
@@ -177,9 +175,9 @@ return packer.startup(function(use)
         config = copilotConfig
     }
 
-	-- LSP
-	use 'neovim/nvim-lspconfig'
-	use 'williamboman/nvim-lsp-installer'
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
 
     -- GIT
     use {
@@ -223,7 +221,7 @@ return packer.startup(function(use)
         config = projectConfig
     }
     use {'nvim-orgmode/orgmode', config = function()
-            require('orgmode').setup{}
+        require('orgmode').setup{}
     end
     }
     use {

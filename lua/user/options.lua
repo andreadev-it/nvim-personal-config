@@ -7,6 +7,7 @@ vim.opt.tabstop = 4
 vim.opt.scrolloff = 20
 vim.opt.sidescrolloff = 10
 vim.opt.wrap = false
+vim.opt.shellslash = true
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
