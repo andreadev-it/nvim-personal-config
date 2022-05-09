@@ -71,4 +71,6 @@ vim.api.nvim_set_keymap( 'n', "<leader>g", "", {
 })
 
 -- Timetrap
-vim.api.nvim_set_keymap( 'n', "<leader>t", ":Timetrap ", { noremap = true })
+vim.api.nvim_set_keymap( 'n', "<leader>td", ":Timetrap d<cr>", { noremap = true })
+vim.api.nvim_set_keymap( 'n', "<leader>ti", ":Timetrap in ", { noremap = true })
+vim.api.nvim_set_keymap( 'n', "<leader>to", ":Timetrap out<cr>", { noremap = true })
