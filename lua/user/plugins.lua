@@ -136,7 +136,7 @@ end
 
 return packer.startup(function(use)
     -- Packer itself
-    use 'wbthomason/packer.nvim'
+    use 'andreadev-it/packer.nvim'
 
     -- Appearance
     use 'kyazdani42/nvim-web-devicons'
@@ -194,6 +194,7 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
     }
+    use "nvim-treesitter/playground"
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
