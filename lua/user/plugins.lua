@@ -188,7 +188,10 @@ return packer.startup(function(use)
     -- Functionalities
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { {
+            'andreadev-it/plenary.nvim'
+            -- 'nvim-lua/plenary.nvim'
+        } }
     }
     use {
         "nvim-treesitter/nvim-treesitter",
@@ -196,10 +199,12 @@ return packer.startup(function(use)
     }
     use "nvim-treesitter/playground"
     use {
-        "nvim-neo-tree/neo-tree.nvim",
+        "andreadev-it/neo-tree.nvim",
+        -- "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
         requires = {
-            "nvim-lua/plenary.nvim",
+            "andreadev-it/plenary.nvim",
+            -- "nvim-lua/plenary.nvim",
             "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim"
         },
